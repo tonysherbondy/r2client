@@ -1,6 +1,7 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+  var redirectUri = 'http://localhost:4200';
   var ENV = {
     modulePrefix: 'r2client',
     environment: environment,
@@ -10,6 +11,15 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+      }
+    },
+
+    torii: {
+      providers: {
+        'facebook-oauth2': {
+          apiKey: '1427922030781779',
+          redirectUri: redirectUri
+        }
       }
     },
 
